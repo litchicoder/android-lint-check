@@ -20,5 +20,5 @@ lint {
 dependencies {
     // For a description of the below dependencies, see the main project README
     compileOnly(libs.bundles.lint.api)
-    implementation(libs.gson)
+    compileOnly(libs.gson)
 }

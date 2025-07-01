@@ -66,14 +66,14 @@ class NotNullAssertionDetector : Detector(), SourceCodeScanner {
 
           // Kotlin Analysis API example
           val sourcePsi = node.operand.sourcePsi
-          if (sourcePsi is KtExpression) {
-            analyze(sourcePsi) {
-              val type = sourcePsi.getKtType()
-              if (type != null && !type.canBeNull) {
-                message += " -- it's not even needed here"
-              }
-            }
-          }
+//          if (sourcePsi is KtExpression) {
+//            analyze(sourcePsi) {
+//              val type = sourcePsi.getKtType()
+//              if (type != null && !type.canBeNull) {
+//                message += " -- it's not even needed here"
+//              }
+//            }
+//          }
 
           val incident = Incident(ISSUE, node, context.getLocation(node), message)
           context.report(incident)
