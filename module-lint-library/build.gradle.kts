@@ -22,7 +22,7 @@ android {
 }
 
 dependencies {
-    implementation(project(":module-lint-checks"))
+//    implementation(project(":module-lint-checks"))
     lintPublish(project(":module-lint-checks"))
 }
 
@@ -36,7 +36,7 @@ afterEvaluate {
             create<MavenPublication>("release") {
                 this.groupId = groupId
                 this.artifactId = "lint-android"
-                this.version = "1.0.0"
+                this.version = "1.0.3"
                 from(components["release"])
             }
         }
