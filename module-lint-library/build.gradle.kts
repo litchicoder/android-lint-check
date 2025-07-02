@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.maven.publish)
 }
 
 android {
@@ -27,4 +28,17 @@ dependencies {
 
 kotlin {
     jvmToolchain(17)
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            create<MavenPublication>("release") {
+                this.groupId = groupId
+                this.artifactId = "lint-android"
+                this.version = "1.0.0"
+                from(components["release"])
+            }
+        }
+    }
 }
