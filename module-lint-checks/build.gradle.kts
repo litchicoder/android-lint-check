@@ -26,3 +26,14 @@ dependencies {
 kotlin {
     jvmToolchain(17)
 }
+
+tasks.jar {
+    manifest {
+        attributes(
+            // 关键点：声明Lint-Registry-v2属性（适用于UAST API的规则）[6,8](@ref)
+            "Lint-Registry-v2" to "com.example.lint.checks.CustomIssueRegistry",
+            // 可选：其他元数据
+            "Implementation-Version" to project.version
+        )
+    }
+}

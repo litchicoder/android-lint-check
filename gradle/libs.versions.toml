@@ -1,5 +1,6 @@
 [versions]
 agp = "8.10.0"
+androidLintCheck = "1.0.1"
 kotlin = "2.1.0"
 lint = '31.10.0' # = agp + 23.0.0
 coreKtx = "1.10.1"
@@ -10,8 +11,10 @@ lifecycleRuntimeKtx = "2.6.1"
 activityCompose = "1.8.0"
 composeBom = "2024.09.00"
 gson = "2.11.0"
+lintCheck="1.0.0"
 
 [libraries]
+android-lint-check = { module = "com.github.litchicoder:android-lint-check", version.ref = "androidLintCheck" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
@@ -53,5 +56,6 @@ kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 android-library = { id = "com.android.library", version.ref = "agp" }
 android-lint = { id = "com.android.lint", version.ref = "agp" }
 maven-publish = { id = "maven-publish" }
+lint-check = { id = "android-lint-check", version.ref = "lintCheck"  }
 
 
