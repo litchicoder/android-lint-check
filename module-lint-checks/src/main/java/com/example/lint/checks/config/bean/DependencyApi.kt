@@ -1,5 +1,6 @@
-package com.rocketzly.checks.config.bean
+package com.example.lint.checks.config.bean
 
+import com.example.lint.checks.config.bean.BaseConfigProperty
 import com.google.gson.annotations.SerializedName
 
 data class DependencyApi(

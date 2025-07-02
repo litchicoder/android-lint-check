@@ -17,6 +17,7 @@ package com.example.lint.checks
 
 import com.android.tools.lint.checks.infrastructure.TestFiles.java
 import com.android.tools.lint.checks.infrastructure.TestLintTask.lint
+import com.example.lint.checks.detector.SampleCodeDetector
 import org.junit.Test
 
 class SampleCodeDetectorTest {

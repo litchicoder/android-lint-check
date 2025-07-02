@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.example.lint.checks
+package com.example.lint.checks.detector
 
 import com.android.tools.lint.client.api.UElementHandler
 import com.android.tools.lint.detector.api.Category
@@ -25,8 +25,6 @@ import com.android.tools.lint.detector.api.JavaContext
 import com.android.tools.lint.detector.api.Scope
 import com.android.tools.lint.detector.api.Severity
 import com.android.tools.lint.detector.api.SourceCodeScanner
-import org.jetbrains.kotlin.analysis.api.analyze
-import org.jetbrains.kotlin.codegen.optimization.common.analyze
 import org.jetbrains.kotlin.psi.KtExpression
 import org.jetbrains.uast.UElement
 import org.jetbrains.uast.UPostfixExpression
@@ -62,21 +60,13 @@ class NotNullAssertionDetector : Detector(), SourceCodeScanner {
     return object : UElementHandler() {
       override fun visitPostfixExpression(node: UPostfixExpression) {
         if (node.operator.text == "!!") {
-          var message = "Do not use `!!`"
-
+          val message = "Do not use `!!`"
           // Kotlin Analysis API example
           val sourcePsi = node.operand.sourcePsi
-//          if (sourcePsi is KtExpression) {
-//            analyze(sourcePsi) {
-//              val type = sourcePsi.getKtType()
-//              if (type != null && !type.canBeNull) {
-//                message += " -- it's not even needed here"
-//              }
-//            }
-//          }
-
-          val incident = Incident(ISSUE, node, context.getLocation(node), message)
-          context.report(incident)
+          if (sourcePsi is KtExpression) {
+            val incident = Incident(ISSUE, node, context.getLocation(node), message)
+            context.report(incident)
+          }
         }
       }
     }

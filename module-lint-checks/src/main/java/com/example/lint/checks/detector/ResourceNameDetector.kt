@@ -1,12 +1,12 @@
-package com.rocketzly.checks.detector
+package com.example.lint.checks.detector
 
 import com.android.SdkConstants
 import com.android.resources.ResourceFolderType
 import com.android.tools.lint.detector.api.*
-import com.rocketzly.checks.LintMatcher
-import com.rocketzly.checks.config.ConfigParser
-import com.rocketzly.checks.config.LintConfig
-import com.rocketzly.checks.report
+import com.example.lint.checks.LintMatcher
+import com.example.lint.checks.config.ConfigParser
+import com.example.lint.checks.config.LintConfig
+import com.example.lint.checks.report
 
 class ResourceNameDetector : BaseDetector(), XmlScanner {
 

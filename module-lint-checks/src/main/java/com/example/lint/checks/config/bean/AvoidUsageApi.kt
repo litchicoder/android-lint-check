@@ -1,4 +1,4 @@
-package com.rocketzly.checks.config.bean
+package com.example.lint.checks.config.bean
 
 
 /**

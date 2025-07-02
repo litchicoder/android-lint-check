@@ -22,3 +22,7 @@ dependencies {
     compileOnly(libs.bundles.lint.api)
     compileOnly(libs.gson)
 }
+
+kotlin {
+    jvmToolchain(17)
+}

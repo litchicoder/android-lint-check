@@ -1,7 +1,7 @@
-package com.rocketzly.checks
+package com.example.lint.checks
 
 import com.android.tools.lint.detector.api.*
-import com.rocketzly.checks.config.bean.BaseConfigProperty
+import com.example.lint.checks.config.bean.BaseConfigProperty
 import org.jetbrains.uast.UCallExpression
 
 /**

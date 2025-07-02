@@ -18,6 +18,7 @@ package com.example.lint.checks
 import com.android.tools.lint.checks.infrastructure.LintDetectorTest
 import com.android.tools.lint.detector.api.Detector
 import com.android.tools.lint.detector.api.Issue
+import com.example.lint.checks.detector.NotNullAssertionDetector
 
 class NotNullAssertionDetectorTest : LintDetectorTest() {
   override fun getDetector(): Detector {

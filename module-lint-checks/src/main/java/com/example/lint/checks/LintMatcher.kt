@@ -1,7 +1,7 @@
-package com.rocketzly.checks
+package com.example.lint.checks
 
 import com.intellij.psi.PsiClass
-import com.rocketzly.checks.config.bean.BaseConfigProperty
+import com.example.lint.checks.config.bean.BaseConfigProperty
 import org.jetbrains.uast.UCallExpression
 import org.jetbrains.uast.UClass
 import org.jetbrains.uast.getContainingUClass
@@ -112,26 +112,29 @@ class LintMatcher {
             exclude: List<String>? = null,
             excludeRegex: String? = null
         ): Boolean {
+            println("match -> name:$name nameRegex:$nameRegex qualifiedName:$qualifiedName inClassName:$inClassName exclude:$exclude excludeRegex:$excludeRegex")
+
             qualifiedName ?: return false
 
             //排除
-            if (inClassName != null && inClassName.isNotEmpty()) {
+            if (!inClassName.isNullOrEmpty()) {
                 if (exclude != null && exclude.contains(inClassName)) return false
 
-                if (excludeRegex != null &&
-                    excludeRegex.isNotEmpty() &&
+                if (!excludeRegex.isNullOrEmpty() &&
                     Pattern.compile(excludeRegex).matcher(inClassName).find()
                 ) {
                     return false
                 }
             }
 
-            if (name != null && name.isNotEmpty() && name == qualifiedName) {//优先匹配name
+            if (name?.isNotEmpty() == true && name == qualifiedName) {//优先匹配name
+                println("match -> success by name, name:$name nameRegex:$nameRegex qualifiedName:$qualifiedName inClassName:$inClassName exclude:$exclude excludeRegex:$excludeRegex")
                 return true
             }
-            if (nameRegex != null && nameRegex.isNotEmpty() &&
+            if (!nameRegex.isNullOrEmpty() &&
                 Pattern.compile(nameRegex).matcher(qualifiedName).find()
             ) {//在匹配nameRegex
+                println("match -> success by regex, name:$name nameRegex:$nameRegex qualifiedName:$qualifiedName inClassName:$inClassName exclude:$exclude excludeRegex:$excludeRegex")
                 return true
             }
             return false

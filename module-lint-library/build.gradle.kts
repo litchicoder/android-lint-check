@@ -24,3 +24,7 @@ dependencies {
     implementation(project(":module-lint-checks"))
     lintPublish(project(":module-lint-checks"))
 }
+
+kotlin {
+    jvmToolchain(17)
+}

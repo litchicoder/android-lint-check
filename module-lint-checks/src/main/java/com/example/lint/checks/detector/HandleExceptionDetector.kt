@@ -1,12 +1,12 @@
-package com.rocketzly.checks.detector
+package com.example.lint.checks.detector
 
 import com.android.tools.lint.client.api.UElementHandler
 import com.android.tools.lint.detector.api.*
-import com.rocketzly.checks.config.ConfigParser
-import com.rocketzly.checks.config.LintConfig
-import com.rocketzly.checks.LintMatcher
-import com.rocketzly.checks.config.bean.HandleExceptionMethod
-import com.rocketzly.checks.report
+import com.example.lint.checks.config.ConfigParser
+import com.example.lint.checks.config.LintConfig
+import com.example.lint.checks.LintMatcher
+import com.example.lint.checks.config.bean.HandleExceptionMethod
+import com.example.lint.checks.report
 import org.jetbrains.uast.UCallExpression
 import org.jetbrains.uast.UElement
 import org.jetbrains.uast.UTryExpression

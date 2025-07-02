@@ -1,4 +1,6 @@
-package com.rocketzly.checks.config.bean
+package com.example.lint.checks.config.bean
+
+import com.example.lint.checks.config.bean.BaseConfigProperty
 
 /**
  * 资源命名规范

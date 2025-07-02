@@ -1,8 +1,8 @@
-package com.rocketzly.checks.detector
+package com.example.lint.checks.detector
 
 import com.android.tools.lint.detector.api.Context
 import com.android.tools.lint.detector.api.Detector
-import com.rocketzly.checks.config.LintConfig
+import com.example.lint.checks.config.LintConfig
 
 open class BaseDetector : Detector() {
 

@@ -18,13 +18,15 @@ package com.example.lint.checks
 import com.android.tools.lint.client.api.IssueRegistry
 import com.android.tools.lint.client.api.Vendor
 import com.android.tools.lint.detector.api.CURRENT_API
+import com.example.lint.checks.detector.AvoidDateDetector
+import com.example.lint.checks.detector.NotNullAssertionDetector
+import com.example.lint.checks.detector.SampleCodeDetector
 
 /*
  * The list of issues that will be checked when running <code>lint</code>.
  */
 class SampleIssueRegistry : IssueRegistry() {
-  override val issues =
-    listOf(SampleCodeDetector.ISSUE, AvoidDateDetector.ISSUE, NotNullAssertionDetector.ISSUE)
+  override val issues = listOf(SampleCodeDetector.ISSUE, AvoidDateDetector.ISSUE, NotNullAssertionDetector.ISSUE)
 
   override val api: Int
     get() = CURRENT_API
