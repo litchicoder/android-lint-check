@@ -12,7 +12,6 @@ class Test {
     val s = "lint"
     fun lint(context: Context) {
 
-        Toast.makeText(context,"hello",Toast.LENGTH_LONG).show()
-        Logger.getLogger("Test").info("hello")
+//        Toast.makeText(context,"hello",Toast.LENGTH_LONG).show()
     }
 }

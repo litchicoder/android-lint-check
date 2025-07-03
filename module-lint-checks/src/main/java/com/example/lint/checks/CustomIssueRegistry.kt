@@ -2,6 +2,7 @@ package com.example.lint.checks
 
 import com.android.tools.lint.client.api.IssueRegistry
 import com.android.tools.lint.detector.api.CURRENT_API
+import com.android.tools.lint.detector.api.Issue
 import com.example.lint.checks.detector.AvoidDateDetector
 import com.example.lint.checks.detector.AvoidUsageApiDetector
 import com.example.lint.checks.detector.DependencyApiDetector

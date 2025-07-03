@@ -19,9 +19,9 @@ class LintConfig private constructor(context: Context) {
         fun getInstance(context: Context): LintConfig {
             if (instance == null) {
                 instance = LintConfig(context)
-                println("init LintConfig")
+//                println("init LintConfig")
             }
-            println("get LintConfig")
+//            println("get LintConfig")
             return instance!!
         }
     }
