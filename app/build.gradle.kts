@@ -37,9 +37,9 @@ android {
 }
 
 dependencies {
-    implementation(project(":module-lint-library"))
+//    implementation(project(":module-lint-library"))
 //    compileOnly(libs.lint.checks)
-//    lintChecks(libs.android.lint.check)
+    implementation(libs.android.lint.check)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
