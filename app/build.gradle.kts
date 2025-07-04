@@ -34,6 +34,8 @@ android {
 
 dependencies {
     implementation(project(":module-lint-library"))
+//    implementation(libs.android.lint.check.v110)
+
 //    compileOnly(libs.lint.checks)
 //    implementation(libs.android.lint.check)
 

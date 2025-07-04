@@ -12,6 +12,9 @@
       {
         "name": "android.widget.Toast.makeText",
         "message": "禁止直接使用Toast，建议使用xxxUtils",
+        "exclude": [
+          "com.example.myapplication.Test"
+        ],
         "severity": "error"
       },
       {

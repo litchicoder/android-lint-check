@@ -34,8 +34,20 @@ class ResourceNameDetector : BaseDetector(), XmlScanner {
         }
 
         val resourceName = when (context.resourceFolderType) {
+            ResourceFolderType.ANIM -> lintConfig.resourceName.anim
+            ResourceFolderType.ANIMATOR -> lintConfig.resourceName.animator
+            ResourceFolderType.COLOR -> lintConfig.resourceName.color
             ResourceFolderType.DRAWABLE -> lintConfig.resourceName.drawable
+            ResourceFolderType.FONT -> lintConfig.resourceName.font
+            ResourceFolderType.INTERPOLATOR -> lintConfig.resourceName.interpolator
             ResourceFolderType.LAYOUT -> lintConfig.resourceName.layout
+            ResourceFolderType.MENU -> lintConfig.resourceName.menu
+            ResourceFolderType.MIPMAP -> lintConfig.resourceName.mipmap
+            ResourceFolderType.NAVIGATION -> lintConfig.resourceName.navigation
+            ResourceFolderType.RAW -> lintConfig.resourceName.raw
+            ResourceFolderType.TRANSITION -> lintConfig.resourceName.transition
+            ResourceFolderType.VALUES -> lintConfig.resourceName.values
+            ResourceFolderType.XML -> lintConfig.resourceName.xml
             else -> null
         } ?: return
 
