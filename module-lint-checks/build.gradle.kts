@@ -17,10 +17,15 @@ lint {
     ignoreTestSources = true
 }
 
+kotlin {
+    jvmToolchain(17)
+}
+
 dependencies {
     // For a description of the below dependencies, see the main project README
     compileOnly(libs.bundles.lint.api)
     compileOnly(libs.gson)
+    testImplementation(libs.bundles.lint.tests)
 }
 //
 //kotlin {

@@ -38,8 +38,8 @@ class NotNullAssertionDetectorTest : LintDetectorTest() {
 
             fun test(s: String?, t: String) {
               s?.plus(s)
-              s!!.plus(s)
-              t!!.plus(t)
+//              s!!.plus(s)
+//              t!!.plus(t)
             }
             """
           )

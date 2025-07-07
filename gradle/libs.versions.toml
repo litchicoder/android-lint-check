@@ -26,6 +26,7 @@ androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-co
 gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
 lint-api = { group = "com.android.tools.lint", name = "lint-api", version.ref = "lint" }
 lint-checks = { group = "com.android.tools.lint", name = "lint-checks", version.ref = "lint" }
+lint-tests = { group = "com.android.tools.lint", name = "lint-tests", version.ref = "lint" }
 lint-cli = { group = "com.android.tools.lint", name = "lint", version.ref = "lint" }
 kotlin-stdlib = { group = "org.jetbrains.kotlin", name = "kotlin-stdlib", version.ref = "kotlin" }
 kotlin-gradle-plugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
@@ -44,6 +45,11 @@ lint-api = [
     # You typically don't need this one, but it does have some utilities
     # like the API database that some lint checks may want to use
     #"lint-checks",
+]
+lint-tests = [
+    "junit",
+    "lint-cli",
+    "lint-tests"
 ]
 
 [plugins]
