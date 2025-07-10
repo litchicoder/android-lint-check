@@ -112,7 +112,6 @@ class LintMatcher {
             exclude: List<String>? = null,
             excludeRegex: String? = null
         ): Boolean {
-            println("match -> name:$name nameRegex:$nameRegex qualifiedName:$qualifiedName inClassName:$inClassName exclude:$exclude excludeRegex:$excludeRegex")
 
             qualifiedName ?: return false
 
@@ -128,13 +127,11 @@ class LintMatcher {
             }
 
             if (name?.isNotEmpty() == true && name == qualifiedName) {//优先匹配name
-                println("match -> success by name, name:$name nameRegex:$nameRegex qualifiedName:$qualifiedName inClassName:$inClassName exclude:$exclude excludeRegex:$excludeRegex")
                 return true
             }
             if (!nameRegex.isNullOrEmpty() &&
                 Pattern.compile(nameRegex).matcher(qualifiedName).find()
             ) {//在匹配nameRegex
-                println("match -> success by regex, name:$name nameRegex:$nameRegex qualifiedName:$qualifiedName inClassName:$inClassName exclude:$exclude excludeRegex:$excludeRegex")
                 return true
             }
             return false
