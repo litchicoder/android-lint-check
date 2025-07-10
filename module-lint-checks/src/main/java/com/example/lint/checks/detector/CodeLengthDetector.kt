@@ -14,24 +14,11 @@ class CodeLengthDetector : Detector(), Detector.UastScanner {
 
         val ISSUE = Issue.create(
             id = "ExcessiveClassLength",
-            briefDescription = "类代码行数过多",
-            explanation = "类代码行数不应超过$MAX_CLASS_LINES 行，建议拆分重构",
+            briefDescription = "类/方法代码行数过多",
+            explanation = "类/方法代码行数不应超过$MAX_CLASS_LINES 行，建议拆分重构",
             category = Category.CORRECTNESS,
             priority = 6,
             severity = Severity.ERROR,
-            implementation = Implementation(
-                CodeLengthDetector::class.java,
-                Scope.JAVA_FILE_SCOPE
-            )
-        )
-
-        val ISSUE_METHOD = Issue.create(
-            id = "ExcessiveMethodLength",
-            briefDescription = "方法代码行数过多",
-            explanation = "方法代码行数不应超过$MAX_METHOD_LINES 行，建议拆分重构",
-            category = Category.CORRECTNESS,
-            priority = 6,
-            severity = Severity.WARNING,
             implementation = Implementation(
                 CodeLengthDetector::class.java,
                 Scope.JAVA_FILE_SCOPE
@@ -63,10 +50,10 @@ class CodeLengthDetector : Detector(), Detector.UastScanner {
                 val startLine = context.getLocation(node).start?.line ?: 0
                 val endLine = context.getLocation(node).end?.line ?: 0
                 val lines = endLine - startLine + 1  // +1 因为行号从 0 开始
-                println("litchi  visitMethod node=${node.name} lines=$lines")
+                println("litchi  visitMethod node=${node.name} isConstructor=${node.isConstructor()} lines=$lines")
                 if (lines > MAX_METHOD_LINES) {
                     context.report(
-                        issue = ISSUE_METHOD,
+                        issue = ISSUE,
                         location = context.getLocation(node),
                         message = "方法代码行数过多 ($lines > $MAX_METHOD_LINES)"
                     )

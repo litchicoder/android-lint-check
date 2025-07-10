@@ -25,11 +25,8 @@ import com.android.tools.lint.detector.api.JavaContext
 import com.android.tools.lint.detector.api.Scope
 import com.android.tools.lint.detector.api.Severity
 import com.android.tools.lint.detector.api.SourceCodeScanner
-import com.example.lint.checks.detector.CodeLengthDetector.Companion.ISSUE_METHOD
-import com.example.lint.checks.detector.CodeLengthDetector.Companion.MAX_METHOD_LINES
 import org.jetbrains.kotlin.psi.KtExpression
 import org.jetbrains.uast.UElement
-import org.jetbrains.uast.UMethod
 import org.jetbrains.uast.UPostfixExpression
 
 class NotNullAssertionDetector : Detector(), SourceCodeScanner {
