@@ -2,10 +2,9 @@ package com.example.lint.checks
 
 import com.android.tools.lint.client.api.IssueRegistry
 import com.android.tools.lint.detector.api.CURRENT_API
-import com.android.tools.lint.detector.api.Issue
 import com.example.lint.checks.detector.AvoidDateDetector
 import com.example.lint.checks.detector.AvoidUsageApiDetector
-import com.example.lint.checks.detector.CodeLengthDetector
+import com.example.lint.checks.detector.CodeLinesDetector
 import com.example.lint.checks.detector.DependencyApiDetector
 import com.example.lint.checks.detector.HandleExceptionDetector
 import com.example.lint.checks.detector.NotNullAssertionDetector
@@ -22,7 +21,7 @@ class CustomIssueRegistry : IssueRegistry() {
         SampleCodeDetector.ISSUE,
         AvoidDateDetector.ISSUE,
         NotNullAssertionDetector.ISSUE,
-        CodeLengthDetector.ISSUE,
+        CodeLinesDetector.ISSUE,
     )
 
     override val api = CURRENT_API
